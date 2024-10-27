@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 03:54:44 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/26 03:54:44 by marvin           ###   ########.fr       */
+/*   Created: 2024/10/26 04:12:56 by marvin            #+#    #+#             */
+/*   Updated: 2024/10/26 04:12:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdio.h>
-# include <unistd.h>
+#include "libft.h"
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isacii(int c);
-int	ft_isprint(int c);
-int	ft_strlen(char *str);
-void	*memset(void *s, int c, size_t n);
-int	ft_atoi(char *str);
-
-#endif
+int	ft_isalnum(int c)
+{
+	while ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c >= '0'
+			&& c <= '9')
+				return (1);
+			return (0);
+}
