@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 22:06:07 by duandrad          #+#    #+#             */
-/*   Updated: 2024/10/27 22:06:07 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:30:33 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/* #include "libft.h"
 
 void	ft_bzero(void *s, size_t len)
 {
-
-}
+	int	i;
+	
+} */
