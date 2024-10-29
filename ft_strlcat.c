@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 13:25:53 by duandrad          #+#    #+#             */
-/*   Updated: 2024/10/29 15:57:12 by duandrad         ###   ########.fr       */
+/*   Created: 2024/10/29 15:59:34 by duandrad          #+#    #+#             */
+/*   Updated: 2024/10/29 16:43:37 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*str;
 	size_t	i;
-
-	str = (char *) s;
+	size_t	j;
+	
 	i = 0;
-	while (str[i] != '\0')
+	j = 0;
+	while (dst[j])
 	{
-		if (str[i] == (char) c)
-			return (str + i);
-		else
-			i++;
+		j++;
 	}
-	if (c == '\0')
-		return (str + i);
-	return (NULL);
+	(char*) src;
+	while(src[i] && size > 0)
+	{
+		dst[j] = src[i];
+		i++;
+		j++;
+	}
+	dst[j] = '\0';
+	return (dst);
 }
-/* 
+
 int main()
 {
-	char test[] = "hello world";
-	printf(";%s;\n", ft_strchr(test, 'o'));
-	printf(";%s;\n", strchr(test, 'o'));
-	return 0;
-}  */
+	char src[] = "hello ";
+	char dst[] = "world";
+	printf("%s", ft_strlcat(dst, src, 4));
+}

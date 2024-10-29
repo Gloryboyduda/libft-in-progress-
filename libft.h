@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 03:54:44 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/29 13:47:53 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:58:35 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		ft_atoi(char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t len);
 char	*strchr(const char *s, int c);
 void	*ft_memset(void *s, int c, size_t n);
+char	*ft_strrchr(const char *s, int c);
 
 #endif
