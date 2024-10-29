@@ -25,5 +25,6 @@ size_t	ft_strlen(const char *str);
 void	*memset(void *s, int c, size_t n);
 int	ft_atoi(char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t len);
+char *strchr(const char *s, int c);
 
 #endif
