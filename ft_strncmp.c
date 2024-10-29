@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 15:59:34 by duandrad          #+#    #+#             */
-/*   Updated: 2024/10/29 18:21:45 by duandrad         ###   ########.fr       */
+/*   Created: 2024/10/29 18:23:36 by duandrad          #+#    #+#             */
+/*   Updated: 2024/10/29 19:35:50 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	size_t	j;
 	
 	i = 0;
-	j = 0;
-	while (dst[j])
-		j++;
-	(char*) src;
-	while(src[i] && size > 0)
+	if (n == 0)
+		return (0);
+	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		dst[j] = src[i];
+		if (s1[i] != s2[i])
+		{
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		}
 		i++;
-		j++;
 	}
-	dst[j] = '\0';
-	return (ft_strlen(dst));
-}
-
-int main()
-{
-	char src[10] = "world";
-	char dst[11] = "hello ";
-	printf(":%ld:\n", ft_strlcat(dst, src, 5));
-	printf(":%s:\n", dst);
+	return (0);
 }
