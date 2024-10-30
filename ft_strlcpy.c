@@ -19,11 +19,10 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t len)
 	i = 0;
 	if (len == 0)
 		return (ft_strlen(src));
-	while (src[i] != '\0' && len > 0)
+	while (src[i] != '\0' && i < len -1)
 	{
 		dest[i] = src[i];
 		i++;
-		len--;
 	}
 	dest[i] = '\0';
 	return (ft_strlen(src));
@@ -32,8 +31,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t len)
 /* int main()
 {
 	char src[] = "hello";
-	char dest[10];
-	printf(":%d:\n", ft_strlcpy(dest, src, 6));
+	char dest[5];
+	printf(":%ld:\n", ft_strlcpy(dest, src, -1));
 	printf(":%s:\n", dest);
 	return 0;
 } */
