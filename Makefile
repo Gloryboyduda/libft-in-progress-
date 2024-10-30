@@ -1,15 +1,23 @@
 NAME = libft.a
-SRCS = (addsuffix .c/ ft_atoi ft_bzero ft_iascii ft_isalnum ft_isalpha ft_isdigit ft_isprint ft_memset ft_strlcpy ft_strlen ft_tolower ft_toupper)
-INCLUDES = libft.h
-OBJECTS = $(SRCS:.c:.o)
+SRCS = ft_atoi.c ft_bzero.c ft_isascii.c ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isprint.c ft_memset.c ft_strlcpy.c ft_strlen.c ft_tolower.c ft_toupper.c
+OBJECTS = $(SRCS:.c=.o)
+INCLUDE = libft.h
 LIBC = ar rcs $(NAME)
 CC = gcc
-CCFLAGS = -Wall -Wextra -Werror
+CCFLAGS += -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(INCLUDES)
+$(NAME): $(OBJECTS)
 	$(LIBC) $(OBJECTS)
 
-%.o: .c $(OBJECTS)
-	
+%.o: %.c $(INCLUDE)
+	$(CC) $(CCFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all

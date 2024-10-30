@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 04:12:56 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/29 13:25:15 by duandrad         ###   ########.fr       */
+/*   Created: 2024/10/29 15:59:34 by duandrad          #+#    #+#             */
+/*   Updated: 2024/10/29 18:21:45 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	while ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c >= '0'
-		&& c <= '9')
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	j;
+	
+	i = 0;
+	j = 0;
+	while (dst[j])
+		j++;
+	(char*) src;
+	while(src[i] && size > 0)
+	{
+		dst[j] = src[i];
+		i++;
+		j++;
+	}
+	dst[j] = '\0';
+	return (ft_strlen(dst));
+}
+
+int main()
+{
+	char src[10] = "world";
+	char dst[11] = "hello ";
+	printf(":%ld:\n", ft_strlcat(dst, src, 5));
+	printf(":%s:\n", dst);
 }
