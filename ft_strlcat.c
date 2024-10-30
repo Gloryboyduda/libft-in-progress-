@@ -16,13 +16,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	j = 0;
 	while (dst[j])
 		j++;
-	(char*) src;
-	while(src[i] && size > 0)
+	(char *) src;
+	while (src[i] && size > 0)
 	{
 		dst[j] = src[i];
 		i++;
@@ -32,10 +32,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (ft_strlen(dst));
 }
 
-int main()
+ int main()
 {
-	char src[10] = "world";
-	char dst[11] = "hello ";
+	char src[] = "world";
+	char dst[] = "hello ";
 	printf(":%ld:\n", ft_strlcat(dst, src, 5));
 	printf(":%s:\n", dst);
 }
