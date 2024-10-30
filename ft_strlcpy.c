@@ -28,11 +28,12 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t len)
 	dest[i] = '\0';
 	return (ft_strlen(src));
 }
-
+/*
 int main()
 {
 	char src[] = "hello";
 	char dest[10];
 	printf("%ld", ft_strlcpy(dest, src, 5));
+	printf("%s", dest);
 	return 0;
-}
+} */
