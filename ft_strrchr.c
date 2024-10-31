@@ -6,11 +6,12 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:00:57 by duandrad          #+#    #+#             */
-/*   Updated: 2024/10/29 15:57:22 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:40:54 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -19,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	str = (char *) s;
 	i = ft_strlen(str);
-	while (i > 0)
+	while (i + 1)
 	{
 		if (str[i] == (char) c)
 			return (str + i);
@@ -33,7 +34,7 @@ char	*ft_strrchr(const char *s, int c)
 /* int main()
 {
 	char test[] = "helloamigo";
-	printf(";%s;\n", ft_strrchr(test, 'x'));
-	printf(";%s;\n", strrchr(test, 'x'));
+	printf(";%s;\n", ft_strrchr(test, 'z'));
+	printf(";%s;\n", strrchr(test, 'z'));
 	return (0);
 } */

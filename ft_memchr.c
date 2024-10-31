@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 14:02:37 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/31 12:44:54 by duandrad         ###   ########.fr       */
+/*   Created: 2024/10/31 11:48:16 by duandrad          #+#    #+#             */
+/*   Updated: 2024/10/31 15:11:41 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-int	ft_atoi(const char *str)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
-	int	sign;
-	int	result;
-
-	i = 0;
-	sign = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
-	{
-		result *= 10;
-		result += str[i] - '0';
-		i++;
-	}
-	return (result * sign);
+	
 }
