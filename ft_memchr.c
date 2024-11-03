@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:48:16 by duandrad          #+#    #+#             */
-/*   Updated: 2024/10/31 15:11:41 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/02 17:01:01 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 /* int main()
 {
 	char s[] = "Hello";
-	printf("%p\n", memchr(s, 'o', 5));
-	printf("%p", ft_memchr(s, 'o', 5));
+ 	printf("%p\n", memchr(s, 2 + 256, 3));
+	printf("%p", ft_memchr(s, 2 + 256, 3));
 	return 0;
 } */

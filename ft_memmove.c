@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:18:58 by duandrad          #+#    #+#             */
-/*   Updated: 2024/10/31 11:45:05 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/02 14:58:13 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	source = (unsigned char *) src;
 	destination = (unsigned char *) dest;
-	if (!dest || !src)
-		return (NULL);
+	if (!dest && !src && n != 0)
+		return (0);
 	if (destination > source)
 	{
 		while (n-- > 0)

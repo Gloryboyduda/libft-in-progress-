@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:56:20 by duandrad          #+#    #+#             */
-/*   Updated: 2024/10/31 15:11:11 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:34:49 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	destination = (unsigned char *) dest;
 	source = (unsigned char *) src;
-	if (!dest || !src || n == 0)
-		return (dest);
+/* 	if (!dest && !src && n != 0)
+		return (NULL); */
 	while (i < n)
 	{
 		destination[i] = source [i];

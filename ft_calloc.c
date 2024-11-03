@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 20:43:35 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/01 20:43:35 by duandrad         ###   ########.fr       */
+/*   Created: 2024/11/02 18:14:54 by duandrad          #+#    #+#             */
+/*   Updated: 2024/11/02 18:16:11 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *calloc(size_t num, size_t size)
+void	*ft_calloc(size_t __nmemb, size_t __size)
 {
 	
 }
+
