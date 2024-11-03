@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 19:56:20 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/03 19:00:30 by duandrad         ###   ########.fr       */
+/*   Created: 2024/11/03 19:02:14 by duandrad          #+#    #+#             */
+/*   Updated: 2024/11/03 19:36:49 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t			i;
-	unsigned char	*destination;
-	unsigned char	*source;
+	size_t	i;
+	char	*dup;
 
 	i = 0;
-	destination = (unsigned char *) dest;
-	source = (unsigned char *) src;
-	if (!dest && !src)
+	dup = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (dup == NULL)
 		return (NULL);
-	while (i < n)
+	while (s[i])
 	{
-		destination[i] = source [i];
+		dup[i] = s[i];
 		i++;
 	}
-	return (dest);
+	dup[i] = '\0';
+	return (dup);
 }
+
+/* int main()
+{
+	char teste[] = "HEllO";
+	char *dupl;
+
+	ft_strdup(teste);
+	printf("%p\n", teste);
+	printf("%s\n", teste);
+	return 0;
+} */
