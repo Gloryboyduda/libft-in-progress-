@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 18:43:28 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/04 17:23:42 by duandrad         ###   ########.fr       */
+/*   Created: 2024/11/04 13:23:28 by duandrad          #+#    #+#             */
+/*   Updated: 2024/11/04 14:08:27 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	j;
+	char	*new;
 
+	new = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!new)
+		return (NULL);
 	i = 0;
-	if (to_find[0] == '\0')
-		return ((char *) str);
-	while (str[i] && i < len)
+	j = 0;
+	while (s1[i])
 	{
-		j = 0;
-		while (str[i + j] == to_find[j] && i + j < len)
-		{
-			if (to_find[j + 1] == '\0')
-				return ((char *)(str + i));
-			j++;
-		}
+		new[j] = s1[i];
+		j++;
 		i++;
 	}
-	return (NULL);
+	i = 0;
+	while (s2[i])
+	{
+		new[j] = s2[i];
+		j++;
+		i++;
+	}
+	new[j] = '\0';
+	return (new);
 }
-
 /* int main()
 {
-	char string[] = "Hello World";
-	char to_find[] = "Wo";
-	printf("%s", ft_strnstr(string, to_find, 5));
+	printf("%s", ft_strjoin("teste ", "passado!"));
 } */
