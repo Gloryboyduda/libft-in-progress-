@@ -21,26 +21,26 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 
 	slen = ft_strlen(s);
-	if (start >= ft_strlen(s))
+	if (start >= slen)
 		return (ft_strdup(""));
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
+	if (len > slen - start)
+		len = slen - start;
 	str = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[i])
-	 {
+	{
 		if (i >= start && j < len)
 			str[j++] = s[i];
 		i++;
 	}
 	str[j] = '\0';
-	return(str);
+	return (str);
 }
-int main()
+/* int main()
 {
 	printf("%s", ft_substr("hola", 0, ULONG_MAX));
 	return 0;
-}
+} */
