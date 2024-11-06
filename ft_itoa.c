@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:22:47 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/04 18:22:48 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:28:31 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ static size_t	count_dig(int n)
 	size_t	i;
 
 	i = 1;
-	while (n /= 10)
+	while (n / 10)
+	{
+		n /= 10;
 		i++;
+	}
 	return (i);
 }
 
