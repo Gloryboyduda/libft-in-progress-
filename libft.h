@@ -6,7 +6,7 @@
 /*   By: duarte <duarte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 03:54:44 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/07 13:55:13 by duarte           ###   ########.fr       */
+/*   Updated: 2024/11/07 18:36:32 by duarte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,21 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 //bonus
+typedef struct s_list
+{
+	void			*content;//the data contained in the node
+	struct s_list	*next;//the adress of the next node or NULL if last.
+}	t_list;
+
+t_list	*ft_lstnew(void *content);
 
 #endif
