@@ -6,7 +6,7 @@
 /*   By: duarte <duarte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 03:54:44 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/07 18:36:32 by duarte           ###   ########.fr       */
+/*   Updated: 2024/11/07 23:08:23 by duarte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ typedef struct s_list
 }	t_list;
 
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
