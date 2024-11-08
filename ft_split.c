@@ -3,16 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:31:05 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/05 13:31:05 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/08 16:22:12 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	count_words(const char *str, char c)
+static void	*freeall(char ** split, int n)
+{
+	while (n--)
+		free(split[n]);
+	free(split);
+	return (NULL);
+}
+
+static	size_t	ft_count_words(const char *str, char c)
 {
 	size_t	words;
 	size_t	x;
@@ -33,7 +41,7 @@ static	size_t	count_words(const char *str, char c)
 	return (words);
 }
 
-static size_t	getpos(const char *s, char c)
+static size_t	ft_getpos(const char *s, char c)
 {
 	size_t	pos;
 
@@ -52,7 +60,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	words = count_words(s, c);
+	words = ft_count_words(s, c);
 	split = malloc(sizeof(char *) * (words + 1));
 	if (!split)
 		return (NULL);
@@ -61,8 +69,10 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s && *s == c)
 			s++;
-		final = getpos(s, c);
+		final = ft_getpos(s, c);
 		split[counter] = ft_substr(s, 0, (int)final);
+		if (!split[counter])
+			return (freeall(split, counter));
 		s += final;
 		counter++;
 	}
@@ -88,8 +98,8 @@ char	**ft_split(char const *s, char c)
 }
 int main()
 {
-	char *test1 = "Hello world !";
-	char **result1 = ft_split(test1, ' ');
+	char *test1 = "Hello \0world !";
+	char **result1 = ft_split(test1, '\0');
 	char *test2 = "HelloWorld!";
 	char **result2 = ft_split(test2, 'a');
 	char *test3 = "";
