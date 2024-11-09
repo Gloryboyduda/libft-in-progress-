@@ -7,7 +7,7 @@ ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_itoa.c ft_putnbr_fd.c \
 ft_strmapi.c ft_striteri.c
 BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-ft_lstlast.c ft_lastadd_back.c
+ft_lstlast.c ft_lstadd_back.c
 OBJECTS = $(SRCS:.c=.o)
 BONUS_OBJECTS = $(BONUS_SRCS:.c=.o)
 INCLUDE = libft.h

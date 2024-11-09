@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duarte <duarte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:31:05 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/08 16:22:12 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/09 18:22:22 by duarte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*freeall(char ** split, int n)
+static void	*freeall(char **split, int n)
 {
 	while (n--)
 		free(split[n]);
