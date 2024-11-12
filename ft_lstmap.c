@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duarte <duarte@student.42.fr>              +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:51:24 by duarte            #+#    #+#             */
-/*   Updated: 2024/11/11 17:41:46 by duarte           ###   ########.fr       */
+/*   Updated: 2024/11/12 13:48:57 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,26 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*map;
+	t_list	*new_cont;
+	void	*n;
 
-	if (lst == NULL)
+	if (!lst || !f || !del)
 		return (NULL);
-	map = (t_list *)malloc(sizeof(t_list));
-	if (!map)
-		return (NULL);
-	while (lst->next != NULL)
+	map = NULL;
+	while (lst)
 	{
-		if (lst->content == NULL)
+		n = f(lst->content);
+		if (!n)
+			ft_lstclear(&map, del);
+		new_cont = ft_lstnew(n);
+		if (!new_cont)
 		{
-			ft_lstdelone(lst, del);
-			free(lst->content);
+			del(n);
+			ft_lstclear(&map, del);
+			return (NULL);
 		}
-		f(lst->content);
+		ft_lstadd_back(&map, new_cont);
 		lst = lst->next;
 	}
-	f(lst->content);
-	*map = *lst;
 	return (map);
 }
