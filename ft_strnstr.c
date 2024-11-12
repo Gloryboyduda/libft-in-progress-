@@ -6,12 +6,12 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:43:28 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/04 17:23:42 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:44:51 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* #include <bsd/string.h>*/
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;
@@ -36,7 +36,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 /* int main()
 {
-	char string[] = "Hello World";
-	char to_find[] = "Wo";
-	printf("%s", ft_strnstr(string, to_find, 5));
-} */
+	char *string = NULL;
+	char *to_find = NULL;
+	//printf("%s", ft_strnstr(string, to_find, 0));
+	printf("%s", strnstr(string, to_find, 0));
+}*/

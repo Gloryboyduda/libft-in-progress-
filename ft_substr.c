@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 19:41:58 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/04 18:08:04 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:27:35 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	size_t	slen;
 
+	if (!s)
+		return (NULL);
 	slen = ft_strlen(s);
 	if (start >= slen)
 		return (ft_strdup(""));
@@ -39,8 +41,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[j] = '\0';
 	return (str);
 }
-/* int main()
+/*int main()
 {
-	printf("%s", ft_substr("hola", 0, ULONG_MAX));
+	printf("%s", ft_substr(NULL, 0, ULONG_MAX));
 	return 0;
-} */
+}*/

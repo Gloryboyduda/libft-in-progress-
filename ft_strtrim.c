@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:10:29 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/04 16:21:44 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:48:02 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*trimmed;
 
+	if (!s1)
+		return (NULL);
 	start = 0;
 	while (s1[start] && ft_trimmed(set, s1[start]))
 		start++;
