@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:59:34 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/13 14:37:27 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:39:04 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dlen + i] = '\0';
 	return (dlen + slen);
 }
-int main()
+/* int main()
 {
 	char *src = "teste";
 	char *dst = NULL;
 	printf(":%ld:\n", ft_strlcat(dst, src, 0));
 	printf(":%ld:\n", strlcat(dst, src, 0));
 	return 0;
-}
+} */
