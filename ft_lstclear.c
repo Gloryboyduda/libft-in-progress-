@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 21:19:37 by duarte            #+#    #+#             */
-/*   Updated: 2024/11/12 18:53:19 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:50:17 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*deleter;
 
-	if (!*lst)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{

@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:23:28 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/12 19:41:24 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:48:23 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	while (s1[i])
-	{
-		new[j] = s1[i];
-		j++;
-		i++;
-	}
+		new[j++] = s1[i++];
 	i = 0;
 	while (s2[i])
-	{
-		new[j] = s2[i];
-		j++;
-		i++;
-	}
+		new[j++] = s2[i++];
 	new[j] = '\0';
 	return (new);
 }
 /* int main()
 {
 	printf("%s", ft_strjoin("teste ", "passado!"));
+	printf("%s", ft_strjoin(NULL, "passado!"));
+	printf("%s", ft_strjoin("teste", NULL));
+	printf("%s", ft_strjoin(NULL, NULL));
+
 } */
