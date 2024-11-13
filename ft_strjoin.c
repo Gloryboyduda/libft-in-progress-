@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:23:28 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/13 13:48:23 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:30:22 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 	char	*new;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (NULL);
 	new = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!new)
