@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:43:28 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/12 18:44:51 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:38:21 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (to_find[0] == '\0')
+	if (!len || to_find[0] == '\0')
 		return ((char *) str);
 	while (str[i] && i < len)
 	{
