@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:59:34 by duandrad          #+#    #+#             */
-/*   Updated: 2024/11/13 14:39:04 by duandrad         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:39:53 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	dlen;
 	size_t	slen;
-	
+
 	slen = ft_strlen(src);
 	if (size == 0)
 		return (size + slen);
